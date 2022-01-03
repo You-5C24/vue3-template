@@ -1,2 +1,5 @@
-# vue3-template
-vue3+vite+typescript+pinia 开发脚手架
+# Vue 3 + Typescript + Vite + Pinia
+
+## UI组件使用naive ui
+
+## CSS框架使用tailwindcss
