@@ -18,6 +18,7 @@
 
 <script lang="ts">
 import demoComponent from './test/demo.vue';
+
 export default {
   name: 'LoginComponent'
 };
@@ -26,6 +27,9 @@ export default {
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 import { useInfoStore } from '@/store/info';
+import { useCookies } from '@vueuse/integrations/useCookies';
+import ILogin from '@/service/api/demo/demo';
+import { onMounted } from 'vue';
 
 let route = useRoute();
 
@@ -40,6 +44,24 @@ const updateIdentity = () => {
 
   infoStore.changeIdentity('teacher');
 };
+
+// useCookies 例子
+const cookies = useCookies(['5c24_token', 'Token']);
+console.log(cookies.get('5c24_token'));
+console.log(cookies.get('Token'));
+cookies.set('5c24_token', 'demo_token_123456');
+
+// 模拟接口 例子
+onMounted(async () => {
+  // let demoRes = await ILogin.login({ userName: '5C24', passWord: '123' })
+  ILogin.login({ userName: '5C24', passWord: '123' })
+    .then((res) => {
+      console.log(res, 9999);
+    })
+    .catch((err) => {
+      console.log(err, 7777);
+    });
+});
 </script>
 
 <style lang="scss" scoped></style>
