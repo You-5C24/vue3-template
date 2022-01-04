@@ -1,5 +1,7 @@
 <template>
-  <router-view></router-view>
+  <n-message-provider>
+    <router-view></router-view>
+  </n-message-provider>
 </template>
 
 <script lang="ts">
@@ -13,7 +15,8 @@ export default {
 <style lang="scss">
 html,
 body,
-#app {
+#app,
+.n-config-provider {
   background-color: #fff;
   height: 100%;
   width: 100%;

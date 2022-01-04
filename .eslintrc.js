@@ -86,7 +86,7 @@ module.exports = {
     // 强制在代码块中使用一致的大括号风格
     'brace-style': 'warn',
     // 强制使用骆驼拼写法命名约定
-    camelcase: 'warn',
+    // camelcase: 'warn',
     // 强制使用一致的缩进
     indent: 'off',
     // 强制在 JSX 属性中一致地使用双引号或单引号
