@@ -98,8 +98,14 @@ const http: Http = {
       axios
         .get(url, { params })
         .then((res) => {
-          window.$loadingBar.finish();
-          res.data.code == 200 ? resolve(res.data) : reject(res.data);
+          if (res.data.code === 200) {
+            window.$loadingBar.finish();
+            resolve(res.data);
+          } else {
+            window.$loadingBar.error();
+            reject(res.data);
+            errorHandle(res.data.code, res.data.message);
+          }
         })
         .catch((err) => {
           window.$loadingBar.error();
@@ -119,6 +125,7 @@ const http: Http = {
           } else {
             window.$loadingBar.error();
             reject(res.data);
+            errorHandle(res.data.code, res.data.message);
           }
         })
         .catch((err) => {
