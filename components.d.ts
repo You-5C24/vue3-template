@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ISymbol: typeof import('./src/components/ISymbol.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     NLoadingBarProvider: typeof import('naive-ui')['NLoadingBarProvider']

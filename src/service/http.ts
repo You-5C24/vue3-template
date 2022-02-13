@@ -95,7 +95,7 @@ const http: Http = {
   get(url, params) {
     return new Promise((resolve, reject) => {
       window.$loadingBar.start();
-      axios
+      instance
         .get(url, { params })
         .then((res) => {
           if (res.data.code === 200) {
@@ -116,7 +116,7 @@ const http: Http = {
   post(url, params) {
     return new Promise((resolve, reject) => {
       window.$loadingBar.start();
-      axios
+      instance
         .post(url, params)
         .then((res) => {
           if (res.data.code === 200) {
@@ -137,7 +137,7 @@ const http: Http = {
   upload(url, file) {
     return new Promise((resolve, reject) => {
       window.$loadingBar.start();
-      axios
+      instance
         .post(url, file, {
           headers: { 'Content-Type': 'multipart/form-data' }
         })
