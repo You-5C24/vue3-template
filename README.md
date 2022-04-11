@@ -1,5 +1,1 @@
-# Vue 3 + Typescript + Vite + Pinia
-
-## UI组件使用naive ui
-
-## CSS框架使用tailwindcss
+# Vue 3 + Typescript + Vite + Pinia 开发即用模板
